@@ -56,7 +56,11 @@ func create_terrain() -> Terrain3D:
 	var img: Image = Image.create_empty(2048, 2048, false, Image.FORMAT_RF)
 	for x in img.get_width():
 		for y in img.get_height():
-			img.set_pixel(x, y, Color(noise.get_noise_2d(x, y), 0., 0., 1.))
+			if (((x - 1024) * (x - 1024)) + ((y - 1024) * (y - 1024)) < 500):
+				img.set_pixel(x, y, Color(1., 1., 1., 1.));
+			else:
+				img.set_pixel(x, y, Color(0., 0., 0., 1.));
+			
 	terrain.region_size = 1024
 	terrain.data.import_images([img, null, null], Vector3(-1024, 0, -1024), 0.0, 150.0)
 

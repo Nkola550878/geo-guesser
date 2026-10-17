@@ -1,5 +1,8 @@
 [gd_scene format=3 uid="uid://c2api44sqa7jm"]
 
+[ext_resource type="Material" uid="uid://ickkffutwcvo" path="res://demo/assets/materials/M_crystal_red.tres" id="1_515qh"]
+[ext_resource type="Material" uid="uid://fkhkir6t1hml" path="res://demo/assets/materials/M_crystal_blue.tres" id="2_nkhas"]
+
 [sub_resource type="Gradient" id="Gradient_kjstu"]
 offsets = PackedFloat32Array(0.2, 1)
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
@@ -60,8 +63,45 @@ last_lod = 0
 last_shadow_lod = 0
 lod0_range = 128.0
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o5851"]
+transparency = 4
+cull_mode = 2
+vertex_color_use_as_albedo = true
+backlight_enabled = true
+backlight = Color(0.5, 0.5, 0.5, 1)
+distance_fade_mode = 1
+distance_fade_min_distance = 128.0
+distance_fade_max_distance = 96.0
+
+[sub_resource type="Terrain3DMeshAsset" id="Terrain3DMeshAsset_742gu"]
+id = 1
+generated_type = 1
+height_offset = 0.5
+material_override = SubResource("StandardMaterial3D_o5851")
+last_lod = 0
+last_shadow_lod = 0
+lod0_range = 128.0
+
+[sub_resource type="Terrain3DMeshAsset" id="Terrain3DMeshAsset_jofvk"]
+id = 2
+generated_type = 1
+height_offset = 0.5
+material_override = ExtResource("1_515qh")
+last_lod = 0
+last_shadow_lod = 0
+lod0_range = 128.0
+
+[sub_resource type="Terrain3DMeshAsset" id="Terrain3DMeshAsset_sov71"]
+id = 3
+generated_type = 1
+height_offset = 0.5
+material_override = ExtResource("2_nkhas")
+last_lod = 0
+last_shadow_lod = 0
+lod0_range = 128.0
+
 [sub_resource type="Terrain3DAssets" id="Terrain3DAssets_742gu"]
-mesh_list = Array[Terrain3DMeshAsset]([SubResource("Terrain3DMeshAsset_o5851")])
+mesh_list = Array[Terrain3DMeshAsset]([SubResource("Terrain3DMeshAsset_o5851"), SubResource("Terrain3DMeshAsset_742gu"), SubResource("Terrain3DMeshAsset_jofvk"), SubResource("Terrain3DMeshAsset_sov71")])
 
 [node name="Terrain3D" type="Terrain3D" unique_id=938536445]
 data_directory = "res://hmmm"
