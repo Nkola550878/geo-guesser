@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://emebjln0hxuc"]
+
+[ext_resource type="PackedScene" uid="uid://domhm87hbhbg1" path="res://demo/components/Player.tscn" id="1_3hqy8"]
+[ext_resource type="Script" uid="uid://dakis6gu8b7nm" path="res://demo/src/CodeGenerated.gd" id="1_po54o"]
+[ext_resource type="PackedScene" uid="uid://bb2lp50sjndus" path="res://demo/components/Environment.tscn" id="2_ggx82"]
+
+[node name="CodeGenerated" type="Node" unique_id=119221487]
+script = ExtResource("1_po54o")
+
+[node name="Player" parent="." unique_id=367112330 instance=ExtResource("1_3hqy8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 200, 0)
+
+[node name="Environment" parent="." unique_id=1975861700 instance=ExtResource("2_ggx82")]
